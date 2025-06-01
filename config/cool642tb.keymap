@@ -113,7 +113,7 @@
         MOUSE {
             bindings = <
 &ret_kp Q           &ret_kp W                   &ret_kp E         &ret_kp R          &ret_kp T                                                            &ret_kp Y          &ret_kp U        &ret_kp I           &ret_kp O         &ret_kp P
-&mt LSHIFT A        &mt LGUI S                  &mkp MB1          &mkp MB2           &ret_kp G               &ret_kp C_MUTE            &ret_kp JP_COLON       &ret_kp H          &mt RCTRL J      &mt RALT K          &mt RGUI L        &mt RSHIFT JP_SEMI
+&mt LSHIFT A        &mkp MB1                    &mkp MB3          &mkp MB2           &ret_kp G               &ret_kp C_MUTE            &ret_kp JP_COLON       &ret_kp H          &mt RCTRL J      &mt RALT K          &mt RGUI L        &mt RSHIFT JP_SEMI
 &ret_kp Z           &ret_kp X                   &ret_kp C         &ret_kp V          &ret_kp B           &ret_kp JP_CARET          &ret_kp JP_BSLH        &ret_kp N          &ret_kp M        &ret_kp JP_COMMA    &ret_kp JP_DOT    &ret_kp JP_SLASH
 &ret_kp ESCAPE      &ret_kp K_APPLICATION       &ret_kp TAB       &ret_kp JP_EISU    &lt 1 SPACE         &kp JP_KANA                  &ret_kp BACKSPACE      &lt 2 ENTER                                                               &ret_kp JP_AT
             >;
