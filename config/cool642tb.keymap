@@ -8,9 +8,6 @@
 // #define SCROLL 5
 // #define NUM 6
 
-// #includeのあとのあたりにスクロール量を変更
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -66,14 +63,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-        // 新しいスクロール動作の追加
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            // 追加: スクロールのタップ時間を設定 (20ms)
-            tap-ms = <20>;
-        };
     };
 
     keymap {
@@ -87,7 +76,7 @@
 &kp ESCAPE      &kp K_APPLICATION       &kp TAB       &kp JP_EISU    &lt 2 SPACE         &kp JP_KANA               &kp BACKSPACE          &lt 3 ENTER                                               &kp JP_AT
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         MOUSE {
