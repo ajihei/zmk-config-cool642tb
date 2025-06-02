@@ -8,6 +8,9 @@
 // #define SCROLL 5
 // #define NUM 6
 
+// #includeのあとのあたりにスクロール量を変更
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -46,22 +49,26 @@
     };
 
     macros {
-        ret_kp: ret_kp {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings =
-                <&to 0 &macro_param_1to1>,
-                <&macro_press>,
-                <&kp MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&kp MACRO_PLACEHOLDER>;
-
-            label = "RET_KP";
+        // 新しいスクロール動作の追加
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
+            tap-ms = <20>;
         };
     };
 
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -74,7 +81,7 @@
 &kp ESCAPE      &kp K_APPLICATION       &kp TAB       &kp JP_EISU    &lt 2 SPACE         &kp JP_KANA               &kp BACKSPACE          &lt 3 ENTER                                               &kp JP_AT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         MOUSE {
@@ -85,7 +92,7 @@
 &trans      &trans       &trans       &trans    &trans         &trans                  &trans      &trans                                                               &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         FUNCTION {
@@ -96,7 +103,7 @@
 &trans           &trans       &trans        &trans        &trans        &kp SPACE         &trans          &trans                                                                    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         NUM {
@@ -107,7 +114,7 @@
 &bt BT_PRV   &bt BT_NXT   &bt BT_SEL 0       &bt BT_SEL 1   &bt BT_SEL 2  &trans             &trans                 &trans                                                           &bt BT_CLR_ALL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         ARROW {
@@ -118,7 +125,7 @@
 &kp RSHIFT  &kp LCTRL  &kp LGUI  &kp LALT  &lt 1 SPACE  &kp N5  &kp N6  &lt 2 SPACE                                &kp BSPC
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         SCROLL {
@@ -129,7 +136,7 @@
 &kp RSHIFT  &kp LCTRL  &kp LGUI  &kp LALT  &lt 1 SPACE  &kp N5  &kp N6  &lt 2 SPACE                                &kp BSPC
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         layer_6 {
@@ -140,7 +147,7 @@
 &kp RSHIFT  &kp LCTRL  &kp LGUI  &kp LALT  &lt 1 SPACE  &kp N5  &kp N6  &lt 2 SPACE                                &kp BSPC
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
