@@ -4,6 +4,12 @@
 #include <dt-bindings/zmk/pointing.h>
 #include "keycode_japanese.h"
 
+#define U_MOUSE_SCROLL_MAX 5  // デフォルトは10
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
+
 // #define MOUSE 4
 // #define SCROLL 5
 // #define NUM 6
