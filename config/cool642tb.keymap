@@ -92,7 +92,7 @@
 
         FUNCTION {
             bindings = <
-&kp F1           &kp F2       &kp F3        &kp F4        &kp F5                                          &none           &mkp MB4      &mkp MB5              &none                 &none
+&kp F1           &kp F2       &kp F3        &kp F4        &kp F5                                          &none           &mkp MB4      &mkp MB5              &none                 &kp DEL
 &mt LSHIFT F6    &mt LGUI F7  &mt LALT F8   &mt LCTRL F9  &kp F10       &none             &none           &kp LEFT        &kp DOWN      &kp UP                &kp RIGHT             &none
 &kp F11          &kp F12      &none         &none         &none         &none             &none           &kp HOME        &kp PG_DN     &kp PG_UP             &kp END               &none
 &trans           &trans       &trans        &trans        &trans        &kp SPACE         &trans          &trans                                                                    &trans
