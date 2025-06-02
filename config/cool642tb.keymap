@@ -71,11 +71,22 @@
 &kp Q           &kp W                   &kp E         &kp R          &kp T                                                                &kp Y          &kp U        &kp I           &kp O         &kp P
 &mt LSHIFT A    &mt LGUI S              &mt LALT D    &mt LCTRL F    &kp G               &kp C_MUTE                &kp JP_COLON           &kp H          &mt RCTRL J  &mt RALT K      &mt RGUI L    &mt RSHIFT JP_SEMI
 &kp Z           &kp X                   &kp C         &kp V          &kp B               &kp JP_CARET              &kp JP_BSLH            &kp N          &kp M        &kp JP_COMMA    &kp JP_DOT    &kp JP_SLASH
-&kp ESCAPE      &kp K_APPLICATION       &kp TAB       &kp JP_EISU    &lt 1 SPACE         &kp JP_KANA               &kp BACKSPACE          &lt 2 ENTER                                               &kp JP_AT
+&kp ESCAPE      &kp K_APPLICATION       &kp TAB       &kp JP_EISU    &lt 2 SPACE         &kp JP_KANA               &kp BACKSPACE          &lt 3 ENTER                                               &kp JP_AT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
+
+        MOUSE {
+            bindings = <
+&trans           &trans                   &trans         &trans          &trans                                                            &trans          &trans        &trans           &trans         &trans
+&trans        &mkp MB1                    &mkp MB3          &mkp MB2           &trans               &trans            &trans       &trans          &trans      &trans          &trans        &trans
+&trans           &trans                   &trans         &trans          &trans           &trans          &trans        &trans          &trans        &trans    &trans    &trans
+&trans      &trans       &trans       &trans    &trans         &trans                  &trans      &trans                                                               &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+        };s
 
         FUNCTION {
             bindings = <
@@ -105,17 +116,6 @@
 &kp A       &kp S      &kp D     &kp F     &kp G        &kp N1  &kp N2  &kp H        &kp J  &kp K      &kp L       &kp ENTER
 &kp Z       &kp X      &kp C     &kp V     &kp B        &kp N3  &kp N4  &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
 &kp RSHIFT  &kp LCTRL  &kp LGUI  &kp LALT  &lt 1 SPACE  &kp N5  &kp N6  &lt 2 SPACE                                &kp BSPC
-            >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
-        };
-
-        MOUSE {
-            bindings = <
-&ret_kp Q           &ret_kp W                   &ret_kp E         &ret_kp R          &ret_kp T                                                            &ret_kp Y          &ret_kp U        &ret_kp I           &ret_kp O         &ret_kp P
-&mt LSHIFT A        &mkp MB1                    &mkp MB3          &mkp MB2           &ret_kp G               &ret_kp C_MUTE            &ret_kp JP_COLON       &ret_kp H          &mt RCTRL J      &mt RALT K          &mt RGUI L        &mt RSHIFT JP_SEMI
-&ret_kp Z           &ret_kp X                   &ret_kp C         &ret_kp V          &ret_kp B           &ret_kp JP_CARET          &ret_kp JP_BSLH        &ret_kp N          &ret_kp M        &ret_kp JP_COMMA    &ret_kp JP_DOT    &ret_kp JP_SLASH
-&ret_kp ESCAPE      &ret_kp K_APPLICATION       &ret_kp TAB       &ret_kp JP_EISU    &lt 1 SPACE         &kp JP_KANA                  &ret_kp BACKSPACE      &lt 2 ENTER                                                               &ret_kp JP_AT
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
