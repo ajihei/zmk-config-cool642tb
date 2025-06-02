@@ -103,10 +103,13 @@
 
         NUM {
             bindings = <
-&kp N1       &kp N2       &kp N3             &kp N4         &kp N5                                                  &kp N6         &kp N7           &kp N8          &kp N9           &kp N0
-&mt LSHIFT LS(N1)   &mt LGUI LS(N2)   &mt LALT LS(N3)       &mt LCTRL LS(N4)     &kp LS(N5)    &none              &none                  &kp LS(N6)     &kp LS(N7)       &kp LS(N8)      &kp LS(N9)       &kp JP_MINUS
-&kp JP_PLUS  &kp JP_MINUS &kp JP_ASTRK       &kp JP_SLASH   &kp JP_EQUAL  &kp JP_LBRC              &kp JP_RBRC                  &kp JP_YEN     &kp JP_PIPE      &kp JP_LBKT     &kp JP_RBKT      &kp JP_EQUAL
-&bt BT_PRV   &bt BT_NXT   &bt BT_SEL 0       &bt BT_SEL 1   &bt BT_SEL 2  &trans             &trans                 &trans                                                           &bt BT_CLR_ALL
+// &kp N1              &kp N2            &kp N3                &kp N4               &kp N5                                             &kp N6          &kp N7          &kp N8           &kp N9      &kp N0
+// &mt LSHIFT LS(N1)   &mt LGUI LS(N2)   &mt LALT LS(N3)       &mt LCTRL LS(N4)     &kp LS(N5)    &none              &none             &kp LS(N6)      &kp LS(N7)      &kp LS(N8)       &kp LS(N9)  &kp JP_MINUS
+
+&kp LS(N1)       &kp LS(N2)     &kp LS(N3)         &kp LS(N4)       &kp LS(N5)                                                &kp LS(N6)     &kp LS(N7)       &kp LS(N8)      &kp LS(N9)       &kp JP_EQUAL
+&mt LSHIFT N1    &mt LGUI N2    &mt LALT N3        &mt LCTRL N4     &kp N5          &none              &none                  &kp N6         &kp N7           &kp N8          &kp N9           &kp N0
+&kp JP_PLUS      &kp JP_MINUS   &kp JP_ASTRK       &kp JP_SLASH     &kp JP_EQUAL    &kp JP_LBRC        &kp JP_RBRC            &kp JP_YEN     &kp JP_PIPE      &kp JP_LBKT     &kp JP_RBKT      &kp JP_MINUS
+&bt BT_PRV       &bt BT_NXT     &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2    &trans             &trans                 &trans                                                           &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
