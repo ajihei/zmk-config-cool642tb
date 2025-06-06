@@ -9,9 +9,8 @@
 // #define NUM 6
 
 &mt {
-    flavor = "tap-preferred";
-    hold-tap-ms = <200>;
-    quick-tap-ms = <180>; // ← 他キーとの干渉に強くなる
+    flavor = "balanced";
+    quick-tap-ms = <0>;
 };
 
 / {
