@@ -85,7 +85,7 @@
 
         FUNCTION {
             bindings = <
-&kp ESCAPE       &none        &none         &kp JP_TILDE  &kp JP_CARET                                    &kp K_APPLICATION  &kp JP_LBKT   &kp JP_RBKT           &kp JP_LBKT           &kp JP_LBRC
+&kp ESCAPE       &none        &none         &kp JP_TILDE  &kp JP_CARET                                    &kp K_APPLICATION  &kp JP_LBKT   &kp JP_RBKT           &kp JP_LBRC           &kp JP_RBRC
 &kp LSHIFT       &kp LGUI     &kp LALT      &kp LCTRL     &none         &none             &none           &kp LEFT           &kp DOWN      &kp UP                &kp RIGHT             &kp DEL
 &none            &none        &none         &none         &none         &none             &none           &kp HOME           &kp PG_DN     &kp PG_UP             &kp END               &none
 &trans           &trans       &trans        &trans        &trans        &trans            &trans          &trans                                                                       &trans
