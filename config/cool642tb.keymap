@@ -36,13 +36,6 @@
             bindings = <&kp DEL>;
             key-positions = <9 8>;
         };
-
-        comb5 {
-            bindings = <&bt BT_CLR_ALL>;
-            key-positions = <9 8>;
-            timeout-ms = <0>;
-            layers = <2>;
-        };
     };
 
     macros {
@@ -71,9 +64,9 @@
         default_layer {
             bindings = <
 &kp Q           &kp W                   &kp E         &kp R          &kp T                                                                &kp Y          &kp U        &kp I           &kp O         &kp P
-&mt LSHIFT A    &mt LGUI S              &mt LALT D    &mt LCTRL F    &kp G               &kp C_MUTE                &kp JP_COLON           &kp H          &mt RCTRL J  &mt RALT K      &mt RGUI L    &mt RSHIFT JP_SEMI
-&kp Z           &kp X                   &kp C         &kp V          &kp B               &none                     &kp JP_AT              &kp N          &kp M        &kp JP_COMMA    &kp JP_DOT    &kp JP_SLASH
-&kp ESCAPE      &kp K_APPLICATION       &kp TAB       &kp JP_EISU    &lt 2 SPACE         &kp JP_KANA               &kp BACKSPACE          &lt 3 ENTER                                               &kp K_APPLICATION
+&mt LSHIFT A    &mt LGUI S              &mt LALT D    &mt LCTRL F    &kp G               &kp C_MUTE                &mkp MB5               &kp H          &mt RCTRL J  &mt RALT K      &mt RGUI L    &mt BACKSPACE
+&kp Z           &kp X                   &kp C         &kp V          &kp B               &mkp MB3                  &mkp MB4               &kp N          &kp M        &kp JP_COMMA    &kp JP_DOT    &kp JP_AT
+&kp ESCAPE      &none                   &none         &kp TAB        &lt 2 SPACE         &kp JP_EISU               &lt 4 JP_KANA          &lt 3 ENTER                                               &kp ESCAPE@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -81,7 +74,7 @@
 
         MOUSE {
             bindings = <
-&trans           &trans       &trans         &trans          &mkp MB3                                    &trans          &trans        &trans          &trans         &trans
+&trans           &trans       &trans         &trans          &trans                                      &trans          &trans        &trans          &trans         &trans
 &trans           &mkp MB1     &trans         &mkp MB2        &trans         &trans          &trans       &trans          &trans        &trans          &trans         &trans
 &trans           &trans       &trans         &trans          &trans         &trans          &trans       &trans          &trans        &trans          &trans         &trans
 &trans           &trans       &trans         &trans          &trans         &trans          &trans       &trans                                                       &trans
@@ -92,10 +85,10 @@
 
         FUNCTION {
             bindings = <
-&kp F1           &kp F2       &kp F3        &kp F4        &kp F5                                          &none           &mkp MB4      &mkp MB5              &none                 &kp DEL
-&mt LSHIFT F6    &mt LGUI F7  &mt LALT F8   &mt LCTRL F9  &kp F10       &none             &none           &kp LEFT        &kp DOWN      &kp UP                &kp RIGHT             &none
-&kp F11          &kp F12      &none         &none         &none         &none             &none           &kp HOME        &kp PG_DN     &kp PG_UP             &kp END               &none
-&trans           &trans       &trans        &trans        &trans        &trans            &trans          &trans                                                                    &trans
+&kp ESCAPE       &none        &none         &kp JP_TILDE  &kp JP_CARET                                    &kp K_APPLICATION  &kp JP_LBKT   &kp JP_RBKT           &kp JP_LBKT           &kp JP_LBRC
+&kp LSHIFT       &kp LGUI     &kp LALT      &kp LCTRL     &none         &none             &none           &kp LEFT           &kp DOWN      &kp UP                &kp RIGHT             &kp DEL
+&none            &none        &none         &none         &none         &none             &none           &kp HOME           &kp PG_DN     &kp PG_UP             &kp END               &none
+&trans           &trans       &trans        &trans        &trans        &trans            &trans          &trans                                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -103,10 +96,10 @@
 
         NUM {
             bindings = <
-&kp LS(N1)       &kp LS(N2)     &kp LS(N3)         &kp LS(N4)       &kp LS(N5)                                                &kp LS(N6)     &kp LS(N7)       &kp LS(N8)      &kp LS(N9)       &kp JP_PIPE
-&mt LSHIFT N1    &mt LGUI N2    &mt LALT N3        &mt LCTRL N4     &kp N5          &none              &none                  &kp N6         &kp N7           &kp N8          &kp N9           &kp N0
-&kp JP_BSLH      &kp JP_LBRC    &kp JP_RBRC        &kp JP_MINUS     &kp JP_CARET    &none              &none                  &kp JP_TILDE   &kp JP_EQUAL     &kp JP_LBKT     &kp JP_RBKT      &kp JP_UNDER
-&bt BT_PRV       &bt BT_NXT     &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2    &trans             &trans                 &trans                                                           &bt BT_CLR_ALL
+&kp LS(N1)       &kp LS(N2)     &kp LS(N3)         &kp LS(N4)       &kp LS(N5)                                                &kp LS(N6)     &kp LS(N7)       &kp LS(N8)      &kp LS(N9)       &kp JP_BSLH 
+&mt LSHIFT N1    &mt LGUI N2    &mt LALT N3        &mt LCTRL N4     &kp N5          &none              &none                  &kp N6         &mt LCTRL N7     &mt LALT N8     &mt LGUI N9      &mt LSHIFT N0
+&kp JP_PLUS      &kp JP_MINUS   &kp JP_ASTRK       &kp JP_SLASH     &kp JP_EQUAL    &none              &none                  &kp JP_PIPE    &kp JP_SEMI      &kp JP_COLON    &kp JP_QMARK     &kp JP_UNDER
+&trans           &trans         &trans             &trans           &trans          &trans             &trans                 &trans                                                           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -114,10 +107,10 @@
 
         ARROW {
             bindings = <
-&kp Q       &kp W      &kp E     &kp R     &kp T                        &kp Y        &kp U  &kp I      &kp O       &kp P
-&kp A       &kp S      &kp D     &kp F     &kp G        &kp N1  &kp N2  &kp H        &kp J  &kp K      &kp L       &kp ENTER
-&kp Z       &kp X      &kp C     &kp V     &kp B        &kp N3  &kp N4  &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-&kp RSHIFT  &kp LCTRL  &kp LGUI  &kp LALT  &lt 1 SPACE  &kp N5  &kp N6  &lt 2 SPACE                                &kp BSPC
+&kp F1           &kp F2         &kp F3             &kp F4           &kp F5                                                    &none           &none      &none                 &none                 &none
+&mt LSHIFT F6    &mt LGUI F7    &mt LALT F8        &mt LCTRL F9     &kp F10         &none              &none                  &none           &none      &none                 &none                 &none
+&kp F11          &kp F12        &none              &none            &none           &none              &none                  &none           &none      &none                 &none                 &none
+&bt BT_PRV       &bt BT_NXT     &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2    &trans             &trans                 &trans                                                                 &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
